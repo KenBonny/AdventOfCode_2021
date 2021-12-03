@@ -8,6 +8,17 @@ open Xunit.Abstractions
 type Aoc1(output: ITestOutputHelper) =
     let write = OutputWriter(output).writeToOutput
 
+    let test = "199
+200
+208
+210
+200
+207
+240
+269
+260
+263"
+
     let input = "140
 154
 165
@@ -2014,6 +2025,17 @@ type Aoc1(output: ITestOutputHelper) =
         write "test"
         input.Split(Environment.NewLine)
         |> Array.map Int32.Parse
+        |> Array.pairwise
+        |> Array.sumBy (fun (first, second) -> if first < second then 1 else 0 )
+        |> (fun sum -> write $"total increases: {sum}")
+
+    [<Fact>]
+    let ``1.2 sum by window of 3`` () =
+        write "test"
+        input.Split(Environment.NewLine)
+        |> Array.map Int32.Parse
+        |> Array.windowed 3
+        |> Array.map Array.sum
         |> Array.pairwise
         |> Array.sumBy (fun (first, second) -> if first < second then 1 else 0 )
         |> (fun sum -> write $"total increases: {sum}")

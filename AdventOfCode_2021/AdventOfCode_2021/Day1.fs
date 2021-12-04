@@ -5,7 +5,7 @@ open AdventOfCode_2021.Shared
 open Xunit
 open Xunit.Abstractions
 
-type Aoc1(output: ITestOutputHelper) =
+type Day1(output: ITestOutputHelper) =
     let write = OutputWriter(output).writeToOutput
 
     let test = "199

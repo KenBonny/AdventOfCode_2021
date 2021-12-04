@@ -10,7 +10,7 @@ type direction = {
     aim: int
 }
 
-type Aoc1(output: ITestOutputHelper) =
+type Day2(output: ITestOutputHelper) =
     let write = Shared.OutputWriter(output).writeToOutput
 
     let test = "forward 5

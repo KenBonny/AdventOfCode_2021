@@ -11,7 +11,8 @@
         <Compile Include="Shared.fs" />
         <Compile Include="Day1.fs" />
         <Compile Include="Day2.fs" />
-        <None Include="Day3.fsx" />
+        <None Include="Day3.1.fsx" />
+        <None Include="Day3.2.fsx" />
     </ItemGroup>
 
     <ItemGroup>
